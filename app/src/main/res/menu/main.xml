@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_1"
+        android:icon="@mipmap/ic_main_share"
+        android:title="没有定制分享平台，默认全部"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_2"
+        android:icon="@mipmap/ic_main_share"
+        android:title="自定义分享平台"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_3"
+        android:icon="@mipmap/ic_main_share"
+        android:title="QQ授权登录"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_4"
+        android:icon="@mipmap/ic_main_share"
+        android:title="微信授权登录"
+        app:showAsAction="never" />
+
+    <!--<item-->
+    <!--android:id="@+id/action_5"-->
+    <!--android:icon="@mipmap/ic_main_share"-->
+    <!--android:title="自定义微信内容分享"-->
+    <!--app:showAsAction="never" />-->
+
+    <!--<item-->
+    <!--android:id="@+id/action_6"-->
+    <!--android:icon="@mipmap/ic_main_share"-->
+    <!--android:title="自定义qq内容分享"-->
+    <!--app:showAsAction="never" />-->
+
+    <!--<item-->
+    <!--android:id="@+id/action_7"-->
+    <!--android:icon="@mipmap/ic_main_share"-->
+    <!--android:title="自定义qq空间内容分享"-->
+    <!--app:showAsAction="never" />-->
+
+    <!--<item-->
+    <!--android:id="@+id/action_8"-->
+    <!--android:icon="@mipmap/ic_main_share"-->
+    <!--android:title="自定义更多内容分享"-->
+    <!--app:showAsAction="never" />-->
+    <!--<item-->
+    <!--android:id="@+id/action_9"-->
+    <!--android:icon="@mipmap/ic_main_share"-->
+    <!--android:title="自定义短信内容分享"-->
+    <!--app:showAsAction="never" />-->
+</menu>

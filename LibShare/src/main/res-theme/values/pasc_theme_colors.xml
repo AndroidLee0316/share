@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="transparent_00000000">#00000000</color>
+    <!--文本主色-->
+    <color name="pasc_primary_text">#333333</color>
+    <!--次文本色-->
+    <color name="pasc_secondary_text">#666666</color>
+    <!--分割线色-->
+    <color name="pasc_divider">#e8e8e8</color>
+</resources>

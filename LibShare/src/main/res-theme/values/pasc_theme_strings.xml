@@ -1,0 +1,19 @@
+<resources>
+    <!--分享-->
+    <string name="share_lib_dialog_wx">微信</string>
+    <string name="share_lib_dialog_wx_circle">朋友圈</string>
+    <string name="share_lib_dialog_qq">QQ</string>
+    <string name="share_lib_dialog_qq_zone">QQ空间</string>
+    <string name="share_lib_dialog_email">邮箱</string>
+    <string name="share_lib_dialog_copy_link">复制链接</string>
+    <string name="share_lib_dialog_sms">短信</string>
+    <string name="share_lib_dialog_more">更多</string>
+    <string name="share_lib_success">分享成功</string>
+    <string name="share_lib_failed">分享失败</string>
+    <string name="share_lib_cancel">分享取消</string>
+    <string name="share_lib_loading">加载中</string>
+    <string name="share_lib_dialog_title">分享</string>
+    <string name="share_lib_dialog_cancel">取消</string>
+    <string name="share_lib_dialog_copy_link_success">已复制链接，快去粘贴</string>
+
+</resources>

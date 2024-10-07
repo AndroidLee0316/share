@@ -1,0 +1,70 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    defaultConfig {
+        applicationId "com.pingan.nt"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    signingConfigs {
+        release {
+            storeFile file('keystore.jks')
+            storePassword "123456"
+            keyAlias "nt"
+            keyPassword "123456"
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+        debug {
+            storeFile file('keystore.jks')
+            storePassword "123456"
+            keyAlias "nt"
+            keyPassword "123456"
+            v2SigningEnabled false
+        }
+    }
+
+    repositories{
+        flatDir{
+            dir 'libs'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //奔溃日志捕获显示
+    //    implementation 'com.Demogithub.tuikes:CrashHandler:v2.1'
+    implementation 'com.tencent.bugly:crashreport:2.6.6.1'
+    if (isMavenBuild == 'true') {
+        implementation "com.zxs.lib:share:1.0.0"
+    } else {
+        api project(':LibShare')
+    }
+    implementation('com.android.support:multidex:1.0.3')
+    api 'com.github.AndroidLee0316:zxs_net:support_2.0.0'
+    api  'com.github.AndroidLee0316:base:support_1.0.0'
+    //    implementation 'com.pasc.lib:share:1.0.0'
+    //    implementation 'com.pasc.lib:base:1.0.3-SNAPSHOT'
+    //    implementation 'com.pasc.lib:net:1.0.6-SNAPSHOT'
+    //    api project(':LibShare')
+}

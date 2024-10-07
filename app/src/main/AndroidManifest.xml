@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="com.pingan.nt"
+          xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools">
+
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <!-- 获取设备网络状态，禁用后无法获取网络状态-->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- 网络权限，当禁用后，无法进行检索等相关业务-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <!-- 读取设备硬件信息，统计数据-->
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/>
+    <!-- 读取系统信息，包含系统版本等信息，用作统计-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <!-- 获取设备的网络状态，鉴权所需网络代理-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <!-- 获取统计数据-->
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <!-- 鉴权所需该权限获取进程列表-->
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <!-- 这个权限用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <!-- 这个权限用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+
+    <!-- 开机启动 -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <!-- 发送持久广播 -->
+    <uses-permission android:name="android.permission.BROADCAST_STICKY"/>
+    <!-- 振动 -->
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.RESTART_PACKAGES"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+
+
+    <application
+        android:name=".TheApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:icon,android:allowBackup,android:roundIcon">
+        <activity
+            android:name="com.pingan.nt.MainDemoActivity"
+            android:windowSoftInputMode="stateAlwaysHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <!-- ****************微信三方begin****************** -->
+
+        <!-- android p target 28 时找不到 apache 包的时候-->
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false"/>
+
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:taskAffinity="net.sourceforge.simcpux"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <!-- ****************微信登录end****************** -->
+
+        <!-- ****************qq登录begin****************** -->
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+
+                <data android:scheme="tencent1106937651"/> <!--tencent + 开放平台获取的APPID -->
+            </intent-filter>
+        </activity>
+        <!-- ****************qq登录end****************** -->
+
+        <activity android:name=".ResultActivity"/>
+
+        <activity
+            android:name=".ShareSampleActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".AuthSampleActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".GetInfoSampleActivity"
+            android:screenOrientation="portrait"/>
+    </application>
+
+</manifest>
